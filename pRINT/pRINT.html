@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+    By BoundedBeans.
+    This was a pain to write.
+    Supports p and w only. (No r because it makes the page hang.)
+-->
+<html>
+<head>
+  <do>
+    <set>
+      <name>
+        <call>
+          <group>
+            <val _="document"></val>
+            <dot _="getElementById"></dot>
+          </group>
+          <str>pRINT_execute</str>
+        </call>
+        <dot _="onclick"></dot>
+      </name>
+      <function>
+        <arguments>
+          <argument _="event"></argument>
+        </arguments>
+          <call>
+            <group>
+            <function>
+              <arguments>
+                <argument _="code"></argument>
+                <argument _="index"></argument>
+              </arguments>
+                <while>
+                  <op _="<">
+                    <val _="index"></val>
+                    <group>
+                      <call>
+                        <group>
+                          <val _="document"></val>
+                          <dot _="getElementById"></dot>
+                        </group>
+                        <str>pRINT_code</str>
+                      </call>
+                      <dot _="value"></dot>
+                      <dot _="length"></dot>
+                    </group>
+                  </op>
+                  <if>
+                    <op _="===">
+                      <group>
+                        <group>
+                          <call>
+                            <group>
+                              <val _="document"></val>
+                              <dot _="getElementById"></dot>
+                            </group>
+                            <str>pRINT_code</str>
+                          </call>
+                          <dot _="value"></dot>
+                        </group>
+                        <get><val _="index"></val></get>
+                      </group>
+                      <str>p</str>
+                    </op>
+                    <set>
+                      <name>
+                        <call>
+                          <group>
+                            <val _="document"></val>
+                            <dot _="getElementById"></dot>
+                          </group>
+                          <str>pRINT_output</str>
+                        </call>
+                        <dot _="textContent"></dot>
+                      </name>
+                      <op _="+">
+                        <group>
+                          <call>
+                            <group>
+                              <val _="document"></val>
+                              <dot _="getElementById"></dot>
+                            </group>
+                            <str>pRINT_output</str>
+                          </call>
+                          <dot _="textContent"></dot>
+                        </group>
+                        <str>\nprint</str>
+                      </op>
+                    </set>
+                  </if>
+                  <elif>
+                    <op _="===">
+                        <group>
+                            <group>
+                              <call>
+                                <group>
+                                  <val _="document"></val>
+                                  <dot _="getElementById"></dot>
+                                </group>
+                                <str>pRINT_code</str>
+                              </call>
+                              <dot _="value"></dot>
+                            </group>
+                            <get><val _="index"></val></get>
+                          </group>
+                      <str>w</str>
+                    </op>
+                    <set>
+                      <name>
+                        <call>
+                          <group>
+                            <val _="document"></val>
+                            <dot _="getElementById"></dot>
+                          </group>
+                          <str>pRINT_output</str>
+                        </call>
+                        <dot _="textContent"></dot>
+                      </name>
+                      <op _="+">
+                        <group>
+                          <call>
+                            <group>
+                              <val _="document"></val>
+                              <dot _="getElementById"></dot>
+                            </group>
+                            <str>pRINT_output</str>
+                          </call>
+                          <dot _="textContent"></dot>
+                        </group>
+                        <str>write</str>
+                      </op>
+                    </set>
+                  </elif>
+                  <set>
+                    <name><val _="index"></val></name>
+                    <op _="+"><val _="index"></val><int>1</int></op>
+                  </set>
+                </while>
+            </function>
+            </group>
+            <group>
+              <call>
+                <group>
+                  <val _="document"></val>
+                  <dot _="getElementById"></val>
+                </group>
+                <str>pRINT_code</str>
+              </call>
+              <dot _="value"></dot>
+            </group>
+            <int>0</int>
+          </call>
+      </function>
+    </set>
+    <set>
+        <name>
+            <call>
+              <group>
+                <val _="document"></val>
+                <dot _="getElementById"></dot>
+              </group>
+              <str>pRINT_clear</str>
+            </call>
+            <dot _="onclick"></dot>
+        </name> 
+        <function>
+            <arguments>
+                <argument _="event"></argument>
+            </arguments>
+            <set>
+                <name>
+                <call>
+                    <group>
+                        <val _="document"></val>
+                        <dot _="getElementById"></dot>
+                    </group>
+                    <str>pRINT_output</str>
+                </call>
+                <dot _="textContent"></dot>
+                </name>
+                <str></str>
+            </set>
+        </function>
+    </set>
+  </do>
+<!-- 
+A Byte of Code's HTML.js framework is subject to this license:
+
+MIT License
+
+Copyright (c) 2022 A Byte of Code
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+  <script defer src="data:text/javascript;base64,Y29uc3QgcGFyc2VycyA9IHsKICBJTlQsCiAgU1RSLAogIERPVCwKICBWQUwsCiAgR1JPVVAsCiAgTkFNRSwKICBPUCwKICBDQUxMLAogIFNFVCwKICBGVU5DVElPTiwKICBBUkdVTUVOVCwKICBBUkdVTUVOVFMsCiAgSUYsCiAgRUxJRiwKICBFTFNFLAogIFRSVUUsCiAgRkFMU0UsCiAgV0hJTEUsCiAgR0VUCn07CgpmdW5jdGlvbiBwYXJzZUNoaWxkcmVuKGVsZW0pIHsKICAgIHJldHVybiBbLi4uZWxlbS5jaGlsZHJlbl0ubWFwKHBhcnNlRWxlbSkKICB9CiAgCiAgZnVuY3Rpb24gcGFyc2VFbGVtKGVsZW0pIHsKICAgIHJldHVybiAocGFyc2Vyc1tlbGVtLnRhZ05hbWVdID8/IChlID0+ICJ7IiArIHBhcnNlQ2hpbGRyZW4oZSkgKyAifSIpKShlbGVtKQogIH0KICAKICBmdW5jdGlvbiBJTlQoZWxlbSkgewogICAgcmV0dXJuIGVsZW0udGV4dENvbnRlbnQ7CiAgfQogIAogIGZ1bmN0aW9uIFNUUihlbGVtKSB7CiAgICByZXR1cm4gJyInICsgZWxlbS50ZXh0Q29udGVudCArICciJzsKICB9CiAgCiAgZnVuY3Rpb24gRE9UKGVsZW0pIHsKICAgIHJldHVybiAiLiIgKyAoZWxlbS5nZXRBdHRyaWJ1dGUoIl8iKSA/PyBlbGVtLmF0dHJpYnV0ZXNbMF0ubmFtZSk7CiAgfQogIAogIGZ1bmN0aW9uIFZBTChlbGVtKSB7CiAgICByZXR1cm4gZWxlbS5nZXRBdHRyaWJ1dGUoIl8iKSA/PyBlbGVtLmF0dHJpYnV0ZXNbMF0ubmFtZSA/PyAibnVsbCI7CiAgfQogIAogIGZ1bmN0aW9uIEdST1VQKGVsZW0pIHsKICAgIHJldHVybiAiKCIgKyBwYXJzZUNoaWxkcmVuKGVsZW0pLmpvaW4oIiIpICsgIikiCiAgfQogIAogIGZ1bmN0aW9uIE5BTUUoZWxlbSkgewogICAgcmV0dXJuIHBhcnNlQ2hpbGRyZW4oZWxlbSkuam9pbigiIikKICB9CiAgCiAgZnVuY3Rpb24gT1AoZWxlbSkgewogICAgcmV0dXJuIHBhcnNlQ2hpbGRyZW4oZWxlbSkuam9pbihlbGVtLmdldEF0dHJpYnV0ZSgiXyIpID8/IGVsZW0uYXR0cmlidXRlc1swXS5uYW1lKTsKICB9CiAgCiAgZnVuY3Rpb24gQ0FMTChlbGVtKSB7CiAgICByZXR1cm4gcGFyc2VFbGVtKGVsZW0uY2hpbGRyZW5bMF0pICsgIigiICsgcGFyc2VDaGlsZHJlbihlbGVtKS5zbGljZSgxKS5qb2luKCkgKyAiKSIKICB9CiAgCiAgZnVuY3Rpb24gU0VUKGVsZW0pIHsKICAgIGlmIChlbGVtLmNoaWxkcmVuWzBdLnRhZ05hbWUgPT09ICJOQU1FIikgewogICAgICByZXR1cm4gcGFyc2VFbGVtKGVsZW0uY2hpbGRyZW5bMF0pICsgIj0iICsgcGFyc2VFbGVtKGVsZW0uY2hpbGRyZW5bMV0pICsgIjsiOwogICAgfSBlbHNlIHsKICAgICAgcmV0dXJuIChlbGVtLmdldEF0dHJpYnV0ZSgiXyIpID8/IGVsZW0uYXR0cmlidXRlc1swXS5uYW1lKSArICI9IiArIHJlYWQoZWxlbSkgKyAiOyI7CiAgICB9CiAgfQogIAogIGZ1bmN0aW9uIEFSR1VNRU5UKGVsZW0pIHsKICAgIHJldHVybiBlbGVtLmdldEF0dHJpYnV0ZSgiXyIpID8/IGVsZW0uYXR0cmlidXRlc1swXS5uYW1lOwogIH0KICAKICBmdW5jdGlvbiBBUkdVTUVOVFMoZWxlbSkgewogICAgcmV0dXJuIHBhcnNlQ2hpbGRyZW4oZWxlbSkuam9pbigpOwogIH0KICAKICBmdW5jdGlvbiBGVU5DVElPTihlbGVtKSB7CiAgICByZXMgPSAiZnVuY3Rpb24gIjsKICAgIGlmIChlbGVtLmF0dHJpYnV0ZXMubGVuZ3RoID4gMCkgewogICAgICByZXMgKz0gZWxlbS5hdHRyaWJ1dGVzWzBdLm5hbWUKICAgIH0KICAgIGlmIChlbGVtLmNoaWxkcmVuWzBdLnRhZ05hbWUgPT09ICJBUkdVTUVOVFMiKSB7CiAgICAgIHJlcyArPSAiKCIgKyBwYXJzZUVsZW0oZWxlbS5jaGlsZHJlblswXSkgKyAiKSB7IiArIHBhcnNlQ2hpbGRyZW4oZWxlbSkuc2xpY2UoMSkuam9pbigiIikgKyAifSIKICAgIH0gZWxzZSB7CiAgICAgIHJlcyArPSAiKCkgeyIgKyBwYXJzZUNoaWxkcmVuKGVsZW0pLmpvaW4oIiIpICsgIn0iCiAgICB9CiAgICByZXR1cm4gcmVzOwogIH0KICAKICBmdW5jdGlvbiBJRihlbGVtKSB7CiAgICByZXR1cm4gImlmICgiICsgcGFyc2VFbGVtKGVsZW0uY2hpbGRyZW5bMF0pICsgJykgeycgKyBwYXJzZUNoaWxkcmVuKGVsZW0pLnNsaWNlKDEpLmpvaW4oIiIpICsgIn0iCiAgfQogIAogIGZ1bmN0aW9uIEVMSUYoZWxlbSkgewogICAgcmV0dXJuICJlbHNlIGlmICgiICsgcGFyc2VFbGVtKGVsZW0uY2hpbGRyZW5bMF0pICsgJykgeycgKyBwYXJzZUNoaWxkcmVuKGVsZW0pLnNsaWNlKDEpLmpvaW4oIiIpICsgIn0iCiAgfQogIAogIGZ1bmN0aW9uIEVMU0UoZWxlbSkgewogICAgcmV0dXJuICJlbHNlIHsiICsgcGFyc2VDaGlsZHJlbihlbGVtKS5zbGljZSgxKS5qb2luKCIiKSArICJ9IgogIH0KICAKICBmdW5jdGlvbiBXSElMRShlbGVtKSB7CiAgICByZXR1cm4gIndoaWxlICgiICsgcGFyc2VFbGVtKGVsZW0uY2hpbGRyZW5bMF0pICsgJykgeycgKyBwYXJzZUNoaWxkcmVuKGVsZW0pLnNsaWNlKDEpLmpvaW4oIiIpICsgIn0iCiAgfQogIAogIGZ1bmN0aW9uIFRSVUUoZWxlbSkgewogICAgcmV0dXJuICJ0cnVlIgogIH0KICAKICBmdW5jdGlvbiBGQUxTRShlbGVtKSB7CiAgICByZXR1cm4gImZhbHNlIgogIH0KICAKICBmdW5jdGlvbiBBUlJBWShlbGVtKSB7CiAgICByZXR1cm4gIlsiICsgcGFyc2VDaGlsZHJlbihlbGVtKS5qb2luKCkgKyAiXSIKICB9CiAgCiAgZnVuY3Rpb24gR0VUKGVsZW0pIHsKICAgIHJldHVybiAiWyIgKyBwYXJzZUVsZW0oZWxlbS5jaGlsZHJlblswXSkgKyAiXSIKICB9CgpmdW5jdGlvbiBnZXREYXRhKGUpIHsKICBjb250ZW50ID0gIiIKICBjb25zb2xlLmxvZyhlLnRhZ05hbWUpCiAgc3dpdGNoIChlLnRhZ05hbWUpIHsKICAgIGNhc2UgIlNFVCI6IGNvbnNvbGUubG9nKGUsIGUuY2hpbGRyZW5bMF0udGFnTmFtZSk7IAogICAgICBpZiAoZS5jaGlsZHJlblswXS50YWdOYW1lID09PSAiTkFNRSIpIHtjb25zb2xlLndhcm4oZ2V0RGF0YShlLmNoaWxkcmVuWzBdKSArICI9IiArIGdldERhdGEoZS5jaGlsZHJlblsxXSkgKyAiOyIpOyBjb250ZW50ICs9IGdldERhdGEoZS5jaGlsZHJlblswXSkgKyAiPSIgKyBnZXREYXRhKGUuY2hpbGRyZW5bMV0pICsgIjsifQogICAgICBlbHNlIHtjb25zb2xlLmluZm8oImVyciIpOyBjb250ZW50ICs9IGUuYXR0cmlidXRlc1swXS5uYW1lICsgIj0iICsgcmVhZChlKSArICI7IjsgYnJlYWt9CiAgICBkZWZhdWx0OiAKICAgICAgY29udGVudCArPSBlLmNoaWxkTm9kZXMubGVuZ3RoID4gMCA/IHJlYWQoZSkgOiAifCI7IGNvbnNvbGUubG9nKCI+Pj4iLCBlLnRhZ05hbWUgfHwgZS50ZXh0Q29udGVudCwgZS5jaGlsZE5vZGVzLmxlbmd0aCwgWy4uLmUuY2hpbGROb2Rlc10ubWFwKGUgPT4gZS50YWdOYW1lKSkKICB9CgogIHJldHVybiBjb250ZW50Owp9CgpmdW5jdGlvbiByZWFkKGRvbSkgewogIGNvbnRlbnQgPSAiIiA7CiAgWy4uLmRvbS5jaGlsZHJlbl0uZm9yRWFjaChlID0+IHsKICAgICAgY29udGVudCArPSBnZXREYXRhKGUpOwogIH0pCiAgcmV0dXJuIGNvbnRlbnQKfQoKZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgiZG8iKS5mb3JFYWNoKGUgPT4gZS5zdHlsZSA9ICJkaXNwbGF5OiBub25lOyIpCgpkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkbyIpLmZvckVhY2goCiAgICBlID0+IGV2YWwocGFyc2VDaGlsZHJlbihlKS5qb2luKCIiKSkKKTs="></script>
+</head>
+<body>
+  <form>
+    <label for="pRINT_code">Your Code:</label>
+    <input type="text" id="pRINT_code" name="pRINT_code">
+  </form>
+  <button id="pRINT_execute">Execute</button>
+  <button id="pRINT_clear">Clear Output</button>
+  <pre id="pRINT_output"></pre>
+</body>
+</html>
