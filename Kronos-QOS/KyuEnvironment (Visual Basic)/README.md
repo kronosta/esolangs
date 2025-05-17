@@ -5,7 +5,7 @@ while in the Scratch version, case doesn't matter in anything at all.
 
 All script commands except `@@@shellcommand` are implemented. The shell commands `createfile` (renamed to `create`), `move`, `execute`, `find`, `push`, `pop`, and `shift` are implemented, plus a `view` command which shows you the contents of the queue.
 
-The shell commands "load" and "save" which are...questionably...replaced with
+The shell commands "load" and "save" are...questionably...replaced with
 saving and loading after every command (I was apparently not a great coder in 2022, this will use the heck out of your disk and probably slow down performance).
 
 A few additional script commands are also implemented, called `&&&tasks`, `&&&const`, and `&&&funccall`.
