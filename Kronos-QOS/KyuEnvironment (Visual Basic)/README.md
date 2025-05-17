@@ -3,7 +3,9 @@ This is a .NET console app recreation of Kronos-QOS, made around December 2022.
 It has a few differences from the original scratch version. One major one is that things are now mostly case-sensitive, 
 while in the Scratch version, case doesn't matter in anything at all.
 
-All shell commands and all script commands are implemented, except the shell commands "load" and "save" which are...questionably...replaced with
+All script commands except `@@@shellcommand` are implemented. The shell commands `createfile` (renamed to `create`), `move`, `execute`, `find`, `push`, `pop`, and `shift` are implemented, plus a `view` command which shows you the contents of the queue.
+
+The shell commands "load" and "save" which are...questionably...replaced with
 saving and loading after every command (I was apparently not a great coder in 2022, this will use the heck out of your disk and probably slow down performance).
 
 A few additional script commands are also implemented, called `&&&tasks`, `&&&const`, and `&&&funccall`.
